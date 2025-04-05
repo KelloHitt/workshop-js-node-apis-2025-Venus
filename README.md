@@ -13,13 +13,6 @@ You will be exposed to basics behind the main communication protocol online webs
 * Suggested IDE: [code.visualstudio.com](http://code.visualstudio.com/)
 * Postman: [postman.com](http://postman.com/) or can use VSCode Postman plugin
 
-### WDCC Workshop Passport
-
-Please scan 🤳the workshop passport link at your earliest convenience to support the team in attendance surveys 📈?
-
-Link: 
-![image](https://github.com/user-attachments/assets/92678d3e-af86-4b70-bde8-1134d353b6bf)
-
 ## Task
 
 Using the provided code in the `exercise` folder, create a basic HTTP API which will **Create**, **Read**, **Update** and **Delete** data (CRUD) from a simulated database.
