@@ -13,6 +13,10 @@ You will be exposed to basics behind the main communication protocol online webs
 * Suggested IDE: [code.visualstudio.com](http://code.visualstudio.com/)
 * Postman: [postman.com](http://postman.com/) or can use VSCode Postman plugin
 
+## Recording from the Workshop:
+
+[Click here for the recording!](https://auckland.zoom.us/rec/share/cjPy7sC-rlp6f97QCkbaWfMCoSn1Lhf5YYj443Qm-mnTdcEhGE_DIWUie7CkM20.m18StH11LqHHr4F_)
+
 ## Task
 
 Using the provided code in the `exercise` folder, create a basic HTTP API which will **Create**, **Read**, **Update** and **Delete** data (CRUD) from a simulated database.
