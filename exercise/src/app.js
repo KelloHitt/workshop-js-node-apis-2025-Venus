@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import testRouter from "./routes/testRoutes.js";
 
 // Set's our port to the PORT environment variable, or 3000 by default if the env is not configured.
 const PORT = process.env.PORT ?? 3000;
@@ -14,27 +15,13 @@ app.use(cors()); // uses cors middleware package,  any frontend on any domain ca
 app.use('/assets', express.static("public")); // Alows the client to access any resource under public folder as long as they include the /assets path e.g. http://localhost:3000/assets/cute-cat.jpeg
 app.use(morgan("dev")); // Logging info with morgan middleware
 
-// TODO Your application routes here
+
+// TODO Your application routes here 
 app.get("/", (req, res) => {
     res.json({ message: "Hello World!" })
 });
 
-
-app.get("/test", (req, res) => {
-    const name = req.query.name;
-    res.send(`Hello this is from the /test path. Your name is ${name}`);
-});
-
-app.get("/test2/:param2", (req, res) => {
-    const testParam = req.params.param2;
-    res.send(`You've accessed resource via path param ${testParam}`);
-});
-
-
-app.post("/test3", (req, res) => {
-    console.log("this is the data from the client:", req.body) //accessing the data made by client
-    res.sendStatus(201);
-})
+app.use(testRouter);
 
 
 // TODO Start the server
