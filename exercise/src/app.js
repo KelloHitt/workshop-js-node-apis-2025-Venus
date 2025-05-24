@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.json({ message: "Hello World!" })
 });
 
-app.use(testRouter);
+app.use("/routes", testRouter);
 
 
 // TODO Start the server
@@ -36,7 +36,7 @@ app.listen(PORT, () => {
 Video TimeStamp -  02:20:00
 
 http://localhost:3000/api/people?firstName=Ash&lastName=Ketchum this is a query string (query paramater) due to ? so to access it 
-you would do req.query.firstName and the path in the get method is "/api/people/""
+you would do req.query.firstName and the path in the get method is "/api/people""
 
 http://localhost:3000/api/people/4 this is a path paramter due to ":id" so in the get method the path would be
 "/api/people/:id" and to access it you code req.params.id; 
