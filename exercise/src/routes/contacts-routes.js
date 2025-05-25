@@ -4,8 +4,9 @@ import { retrieveContact } from "../data/contacts-dao.js"
 const router = Router();
 
 // Contacts API
-router.get("/", async (req, res) => {
-    const contact = await retrieveContact("5f90d372-7bdf-4b39-b621-cf6d3cd975f4");
+router.get("/:id", async (req, res) => {
+    const id = req.params.id
+    const contact = await retrieveContact(id);
     return res.json(contact);
 })
 
