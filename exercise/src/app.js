@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import testRouter from "./routes/testRoutes.js";
+import testRouter from "./routes/test-routes.js";
+import contactsRouter from "./routes/contacts-routes.js";
 
 // Set's our port to the PORT environment variable, or 3000 by default if the env is not configured.
 const PORT = process.env.PORT ?? 3000;
@@ -22,6 +23,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/routes", testRouter);
+
+app.use("/api/contacts", contactsRouter);
 
 
 // TODO Start the server
