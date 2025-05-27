@@ -14,8 +14,8 @@ router.get("/test2/:param2", (req, res) => {
 
 
 router.post("/test3", (req, res) => {
-    console.log("this is the data from the client:", req.body) //accessing the data made by client
+    console.log("this is the data from the client:", req.body); //accessing the data made by client
     res.sendStatus(201);
-})
+});
 
 export default router;

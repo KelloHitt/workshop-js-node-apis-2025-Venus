@@ -11,33 +11,38 @@ const PORT = process.env.PORT ?? 3000;
 const app = express();
 
 // TODO Configure middleware with app.use() (CORS support, JSON parsing support, static files support)
-app.use(express.json()); // Activates JSON parsing automatically parses application/json request bodies and makes the data available in req.body 
-app.use(cors()); // uses cors middleware package,  any frontend on any domain can access your API
-app.use('/assets', express.static("public")); // Alows the client to access any resource under public folder as long as they include the /assets path e.g. http://localhost:3000/assets/cute-cat.jpeg
-app.use(morgan("dev")); // Logging info with morgan middleware
+// Activates JSON parsing automatically parses application/json request bodies and makes the data available in req.body 
+app.use(express.json());
+
+// uses cors middleware package,  any frontend on any domain can access your API
+app.use(cors());
+
+// Alows the client to access any resource under public folder as long as they include the /assets path e.g. http://localhost:3000/assets/cute-cat.jpeg
+app.use('/assets', express.static("public"));
+
+// Logging info with morgan middleware
+app.use(morgan("dev"));
 
 
 // TODO Your application routes here 
 app.get("/", (req, res) => {
-    res.json({ message: "Hello World!" })
+    res.json({ message: "Hello World!" });
 });
 
 app.use("/routes", testRouter);
 
+// Using additional file in routes folder to complete APIs
 app.use("/api/contacts", contactsRouter);
 
 
 // TODO Start the server
 app.listen(PORT, () => {
-    console.log("SERVER IS RUNNING ON PORT", PORT)
+    console.log("SERVER IS RUNNING ON PORT", PORT);
 });
 
 
 
 /* Notes to Self 
-
-Video TimeStamp -  02:20:00
-
 http://localhost:3000/api/people?firstName=Ash&lastName=Ketchum this is a query string (query paramater) due to ? so to access it 
 you would do req.query.firstName and the path in the get method is "/api/people""
 
