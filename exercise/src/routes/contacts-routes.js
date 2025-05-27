@@ -16,6 +16,12 @@ router.get("/", async (req, res) => {
     return res.json(contacts);
 });
 
+// Delete a contact based on its ID
+router.delete("/:id", async (req, res) => {
+    const id = req.params.id;
+    deleteContact(id);
+    return res.sendStatus(201).send(`Contact {id} successfully deleted`);
+});
 
 router.post('/', async (req, res) => {
     // no validation so a crash may occur
