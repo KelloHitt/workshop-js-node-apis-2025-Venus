@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { retrieveContact, createContact, retrieveContacts, updateContact } from "../data/contacts-dao.js"
+import { retrieveContact, createContact, retrieveContacts, updateContact, deleteContact } from "../data/contacts-dao.js"
 
 const router = Router();
 
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 // Delete a contact based on its ID
 router.delete("/:id", async (req, res) => {
     const id = req.params.id;
-    deleteContact(id);
+    await deleteContact(id);
     return res.sendStatus(201).send(`Contact {id} successfully deleted`);
 });
 
