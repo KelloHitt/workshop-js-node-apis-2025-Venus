@@ -28,7 +28,7 @@ router.delete("/:id", async (req, res) => {
 // Updating a contact based on its id
 router.patch("/:id", async (req, res) => {
     const id = req.params.id;
-    const contact = await retrieveContact(id);
+    const contact = req.body;
     const result = await updateContact(id, contact);
     return res.json(result);
 })
