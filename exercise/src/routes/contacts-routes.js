@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
     const id = req.params.id;
     await deleteContact(id);
-    return res.sendStatus(201).send(`Contact {id} successfully deleted`);
+    return res.send(`Contact {id} successfully deleted`).sendStatus(201);
 });
 
 // Updating a contact based on its id
